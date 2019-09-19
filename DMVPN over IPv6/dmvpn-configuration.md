@@ -35,7 +35,7 @@ ipv6 router ospf 1
 　　router-id 0.0.0.1  
   
   
-- HUB2：  
+- HUB2:
 interface gi0/0  
 　　ipv6 address 2003::1 64  
 crypto keyring dmvpn  
@@ -67,3 +67,35 @@ interface Tunnel1
 ipv6 router ospf 1  
 　　router-id 0.0.0.2  
   
+  
+- SPOKE1:
+interface gi0/0  
+　　ipv6 address 2004::1 64  
+crypto keyring dmvpn  
+　　pre-shared-key address ipv6 :: key ***  
+crypto isakmp profile dmvpn  
+　　keyring dmvpn  
+　　match identity address ipv6 ::  
+crypto ipsec transform-set dmvpn esp-3des esp-sha-hmac  
+　　mode transport
+crypto ipsec profile dmvpn
+　　set transform-set dmvpn
+　　set isakmp-profile dmvpn
+interface Tunnel1
+　　ipv6 address FC00:3:: 64
+　　ipv6 address FE80::3 link-local 
+ipv6 mtu 1420
+ipv6 nhrp authentication cntdmvpn
+ipv6 nhrp map multicast 2002::1 
+ipv6 nhrp map FE80::1 2002::1
+ipv6 nhrp map multicast 2003::1 
+ipv6 nhrp map FE80::1 2003::1
+ipv6 nhrp network-id 1
+ipv6 nhrp nhs FE80::1
+ipv6 ospf network broadcast
+ipv6 ospf 1 area 3
+tunnel source GigabitEthernet0 /0
+tunnel mode gre multipoint ipv6
+tunnel protection ipsec profile dmvpn
+ipv6 router ospf 1
+router-id 0.0.0.3
