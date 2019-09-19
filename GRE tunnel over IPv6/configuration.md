@@ -1,5 +1,6 @@
 ![Image](https://github.com/silence-kai/IPsecVPN/blob/master/GRE%20tunnel%20over%20IPv6/GRE%20tunnel%20over%20IPv6.png)
 - FW_BJ(USG6300):  
+  
 interface Tunnel1  
 ipv6 enable  
 ip address 1.1.1.1 255.255.255.0  
