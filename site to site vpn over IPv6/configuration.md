@@ -80,3 +80,38 @@ source-zone trust
 egress-interface GigabitEthernet1 /0/0  
 source-address range FC00:2::1 FC00:2::FFFF:FFFF:FFFF:FFFF  
 action no-nat  
+
+
+- FW_NJ(Cisco ASA 5505):  
+  
+interface Gi0/0  
+nameif outside   
+ipv6 address 2001::1/64   
+  
+ipv6 access-list IPv6_tunnel permit ip FC00:1::1/64 FC00:2::1/64  
+  
+ipv6 route outside FC002::1/64 2001::2/64  
+  
+crypto ipsec ikev1 transform-set cisco esp-aes-256 esp-sha-hmac  
+crypto ikev1 enable outside  
+  
+crypto map IPv6-L2L 1 match address IPv6_tunnel  
+crypto map IPv6-L2L 1 set peer 2002::1  
+crypto map IPv6-L2L 1 set ikev1 transform-set cisco  
+crypto map IPv6-L2L interface outside  
+  
+crypto ikev1 policy 10  
+authentication pre-share  
+encryption aes  
+hash sha  
+group 2  
+crypto ikev1 enable outside  
+crypto ipsec ikev1 transform-set cisco esp-aes-256 esp-sha-hmac  
+  
+tunnel-group 2001::1 type ipsec-l2l  
+tunnel-group 2001::1 ipsec-attributes  
+ikev1 pre-shared-key cisco123  
+  
+global (outside) 1 interface  
+ipv6 access-list IPv6_nat0 permit ip FC00:1::1/64 FC00:2::1/64  
+nat (inside) 0 access-list IPv6_nat0  
