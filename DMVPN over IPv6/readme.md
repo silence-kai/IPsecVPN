@@ -11,7 +11,7 @@ interface Tunnel1
 　　ipv6 nhrp map FE80::2 2003::1  
 　　ipv6 nhrp network-id 1    
 　　ipv6 nhrp nhs FE80::2  
-　　ipv6 ospf network broadcast  
-　　ipv6 ospf priority 254  
-　　ipv6 ospf 1 area 1  
+　　ipv6 nhrp nhs FE80::1  #  
+　　ospfv3 network broadcast  # 
+　　ospfv3 1 ipv6 area 2  #
 
