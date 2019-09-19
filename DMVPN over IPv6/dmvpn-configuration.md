@@ -35,7 +35,7 @@ ipv6 router ospf 1
 　　router-id 0.0.0.1  
   
   
-- HUB2  
+HUB2：  
 interface gi0/0  
     ipv6 address 2003::1 64  
 crypto keyring dmvpn  
