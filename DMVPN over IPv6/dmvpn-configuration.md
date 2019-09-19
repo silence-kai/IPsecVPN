@@ -2,7 +2,7 @@
 
 Example of CISCO ISR4221:  
   
-HUB1:  
+- HUB1:  
 interface gi0/0  
 　　ipv6 address 2002::1 64  
 crypto keyring dmvpn   
