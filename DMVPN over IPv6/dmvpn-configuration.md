@@ -26,7 +26,7 @@ interface Tunnel1
 　　ipv6 nhrp network-id 1  
 　　ipv6 nhrp nhs FE80::2  
 　　ospfv3 network broadcast  
-　　ospfv3 priority 255  
+　　ospfv3 priority 254  
 　　ospfv3 1 ipv6 area 1  
 　　tunnel source GigabitEthernet0 /0  
 　　tunnel mode gre multipoint ipv6  
@@ -58,7 +58,8 @@ interface Tunnel1
 　　ipv6 nhrp map FE80::1 2002::1  
 　　ipv6 nhrp network-id 1  
 　　ipv6 nhrp nhs FE80::1  
-　　ospfv3 network broadcast   
+　　ospfv3 network broadcast  
+　　ospfv3 priority 255
 　　ospfv3 1 ipv6 area 2  
 　　tunnel source GigabitEthernet0 /0  
 　　tunnel mode gre multipoint ipv6  
