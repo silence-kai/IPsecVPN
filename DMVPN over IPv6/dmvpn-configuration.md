@@ -35,13 +35,13 @@ ipv6 router ospf 1
 　　router-id 0.0.0.1  
   
   
-- HUB2
-interface gi0/0  　　
-    ipv6 address 2003::1 64  　　
-crypto keyring dmvpn   　　
-    pre-shared-key address ipv6 :: key ***  　　
-crypto isakmp profile dmvpn  　　
-    keyring dmvpn  　　
+- HUB2  
+interface gi0/0  
+    ipv6 address 2003::1 64  
+crypto keyring dmvpn  
+    pre-shared-key address ipv6 :: key ***  
+crypto isakmp profile dmvpn  
+    keyring dmvpn  
     match identity address ipv6 ::  　　
 crypto ipsec transform-set dmvpn esp-3des esp-sha-hmac   　　
     mode transport  　　
