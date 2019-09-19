@@ -76,22 +76,22 @@ crypto isakmp profile dmvpn
 　　keyring dmvpn  
 　　match identity address ipv6 ::  
 crypto ipsec transform-set dmvpn esp-3des esp-sha-hmac  
-　　mode transport
-crypto ipsec profile dmvpn
-　　set transform-set dmvpn
-　　set isakmp-profile dmvpn
-interface Tunnel1
-　　ipv6 address FC00:3:: 64
-　　ipv6 address FE80::3 link-local 
-　　ipv6 mtu 1420
-　　ipv6 nhrp authentication cntdmvpn
-　　ipv6 nhrp map multicast 2002::1 
-　　ipv6 nhrp map FE80::1 2002::1
-　　ipv6 nhrp map multicast 2003::1 
-　　ipv6 nhrp map FE80::1 2003::1
-　　ipv6 nhrp network-id 1
-　　ipv6 nhrp nhs FE80::1
-　　ospfv3 network broadcast      
+　　mode transport  
+crypto ipsec profile dmvpn  
+　　set transform-set dmvpn  
+　　set isakmp-profile dmvpn  
+interface Tunnel1  
+　　ipv6 address FC00:3:: 64  
+　　ipv6 address FE80::3 link-local   
+　　ipv6 mtu 1420  
+　　ipv6 nhrp authentication cntdmvpn  
+　　ipv6 nhrp map multicast 2002::1   
+　　ipv6 nhrp map FE80::1 2002::1  
+　　ipv6 nhrp map multicast 2003::1   
+　　ipv6 nhrp map FE80::1 2003::1   
+　　ipv6 nhrp network-id 1  
+　　ipv6 nhrp nhs FE80::1  
+　　ospfv3 network broadcast  
 　　ospfv3 1 ipv6 area 3  
 　　tunnel source GigabitEthernet0 /0  
 　　tunnel mode gre multipoint ipv6  
