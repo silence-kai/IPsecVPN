@@ -15,5 +15,5 @@ interface Tunnel1
 　　ospfv3 priority 254  #  ipv6 ospf priority 254  
 　　ospfv3 1 ipv6 area 1  #  ipv6 ospf network broadcast  
 
-Is "ipv6 ospf network broadcast" equal to "ospfv3 network broadcast" ? because I 've configured it for our company,  
+Is "ipv6 ospf network broadcast" equal to "ospfv3 network broadcast" ? because I 've configured it for my company,  
 I have never do the test for this.  
