@@ -16,5 +16,5 @@ interface Tunnel1
 　　ospfv3 1 ipv6 area 1  #  ipv6 ospf network broadcast  
 
 Is "ipv6 ospf network broadcast "equal to "ospfv3 network broadcast" ?  
-Is "ospfv3 1 ipv6 area 1" equal "ipv6 ospf network broadcast" ?
+Is "ospfv3 1 ipv6 area 1" equal "ipv6 ospf network broadcast" ?  
 because I 've configured it for my company, I have never do the test for this.  
