@@ -25,5 +25,5 @@ OK, you will find the VPN tunnel will not work. so you should change the configu
 　　**keyring LANB**  
 　　**match identity address　10.1.1.1 255.255.255.255**  
 　　**...**  
-　　**...** 
+　　**...**    
 The VPN tunnel is working now.
