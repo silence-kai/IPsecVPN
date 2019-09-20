@@ -8,23 +8,22 @@ This is how you access internet, but how could configure the site to site VPN, a
 In general, we will do this in router of site A:  
 
 **crypto kering LANB**  
-　　pre-shared-key address 5.5.5.5 key ****  
-crypto isakmp profile LANB  
-　　vrf LANB  
-　　keyring LANB  
-　　match identity address　5.5.5.5 255.255.255.255  
-　　...  
-　　...  
+　　**pre-shared-key address 5.5.5.5 key pasword**  
+**crypto isakmp profile LANB**  
+　　**vrf LANB**  
+　　**keyring LANB**  
+　　**match identity address　5.5.5.5 255.255.255.255**  
+　　**...**  
+　　**...**  
   
 OK, you will find the VPN tunnel will not work. so you should change the configuration:  
 
-crypto kering LANB  
-　　pre-shared-key address 5.5.5.5 key ****  
-crypto isakmp profile LANB  
-　　vrf LANB  
-　　keyring LANB  
-　　match identity address　10.1.1.1 255.255.255.255  
-　　...  
-　　...  
-
+**crypto kering LANB**  
+　　**pre-shared-key address 5.5.5.5 key pasword**  
+**crypto isakmp profile LANB**  
+　　**vrf LANB**  
+　　**keyring LANB**  
+　　**match identity address　10.1.1.1 255.255.255.255**  
+　　**...**  
+　　**...** 
 The VPN tunnel is working now.
