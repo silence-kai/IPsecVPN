@@ -7,7 +7,7 @@ This is how you access internet, but how could configure the site to site VPN, a
 
 In general, we will do this in router of site A:  
 
-crypto kering LANB  
+**crypto kering LANB**  
 　　pre-shared-key address 5.5.5.5 key ****  
 crypto isakmp profile LANB  
 　　vrf LANB  
@@ -27,4 +27,4 @@ crypto isakmp profile LANB
 　　...  
 　　...  
 
-
+The VPN tunnel is working now.
