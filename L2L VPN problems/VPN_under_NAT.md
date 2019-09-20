@@ -18,9 +18,13 @@ crypto isakmp profile LANB
   
 OK, you will find the VPN tunnel will not work. so you should change the configuration:  
 
+crypto kering LANB  
+　　pre-shared-key address 5.5.5.5 key ****  
 crypto isakmp profile LANB  
 　　vrf LANB  
 　　keyring LANB  
-　　match identity address　10.1.1.1 255.255.255.255 
+　　match identity address　10.1.1.1 255.255.255.255  
+　　...  
+　　...  
 
 
