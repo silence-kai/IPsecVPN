@@ -1,4 +1,4 @@
-#LAN to LAN vpn always break down automatically  
+# LAN to LAN vpn always break down automatically  
 I met a strange thing about LAN to LAN VPN, I builld the VPN between site A and site B, but you do command "**show isakmp sa**", you find the tunnel is not up, if the client of A access the client of B, the tunnel still down, otherwise, if the client of B access the client of A, the tunnel will up, here is the configuration:  
 
 Site A(Cisco ASA 5505):  
